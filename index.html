@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Arimo", sans-serif}
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url('/pcb blurred.png');
+      min-height: 100%;
+    }
+
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-th"></i> PROJECTS</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-grayscale-min" id="home">
+  <div class="w3-text-white" style="position:absolute; bottom: 45%; width: 100%; text-align: center; font-weight: bold; ">
+    <span class="w3-jumbo w3-hide-small">Shane Andres</span>
+    <span class="w3-display-center w3-xxxlarge w3-hide-large w3-hide-medium" style="bottom: 25%; width: 100%">Shane Andres</span>
+
+    <div class="w3-display-center">
+      <p><a href="https://drive.google.com/file/d/1RHoeS0ZdkYhEBZOM-IKMz3SfFtuqMllQ/view?usp=sharing" class="w3-button w3-white w3-padding-large w3-xlarge w3-margin-top w3-hover-opacity" style="font-weight: lighter; filter:opacity(65%);">Resume</a></p>
+    </div>
+  </div>
+
+
+  <div class="w3-display-bottommiddle w3-text-grey w3-large" style="bottom: 25%; padding:24px 48px;">
+    <a href="https://github.com/shanetandres"><i class="fa fa-github w3-hover-opacity" style="scale:200%; position: relative; right: 50%; filter:brightness(200%);"></i></a>
+    <a href="mailto:shanetandres@gmail.com"><i class="fa fa-envelope-o w3-hover-opacity" style="scale:200%; position: relative; right: 0%; filter:brightness(200%);"></i></a>
+    <a href="https://www.linkedin.com/in/shane-andres-35722b29b/" class="fa fa-linkedin w3-hover-opacity" style="scale:200%; position: relative; left: 50%; filter:brightness(200%);"></a>
+  </div>
+</header>
+
+<!-- Projects Section -->
+<div class="w3-container w3-light-grey" style="padding:64px 16px" id="projects">
+  <div class="w3-row-padding">
+    <div class="w3-col m7">
+      <h1>Tube TV Oscilloscope</h1>
+      <p><i>Personal Project</i></t></p>
+      <p>Driving the deflection coils of a Cathode Ray Tube (CRT) with an audio amplifier to use as a rudimentary oscilloscope in X-Y mode.
+          One of my first electronics projects, I gained experience using lab equipment, working with high voltage electronics, and soldering.</p>
+    </div>
+    <div class="w3-col m5", style="padding-left: 0%" >
+      <div class="w3-image w3-round-large" style="width:400px; height:300px; overflow:hidden"></dov><img class="w3-image w3-round-large" src="tube.jpg" alt="Buildings"></div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-border-grey" style="padding:64px 16px" id="projects">
+  <div class="w3-row-padding">
+    <div class="w3-col m5", style="padding-left: 0%" >
+      <video loop autoplay width="400" class="w3-image w3-round-large">
+        <source src="tetrix%20demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="w3-col m7">
+      <h1>Tetrix</h1>
+      <p><i>Group Project</i></t></p>
+      <p>An online co-op version of the classic game, with a twist - where every time a new player joins,
+      the playing board gets <b>wider</b>. Working on the backend of the project, I learned
+      about working with databases and implementing authentication using Firebase.
+      Along the way, I gained experience using JavaScript.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+
+
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
+    }
+  }
+
+  // Close the sidebar with the close button
+  function w3_close() {
+    mySidebar.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

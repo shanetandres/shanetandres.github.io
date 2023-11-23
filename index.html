@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>W3.CSS Template</title>
+  <title>Shane Andres</title>
+  <link rel="icon" type="image/x-icon" href="lightning.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="w3.css">
@@ -67,7 +68,7 @@
 
   <div class="w3-display-bottommiddle w3-text-grey w3-large" style="bottom: 25%; padding:24px 48px;">
     <a href="https://github.com/shanetandres"><i class="fa fa-github w3-hover-opacity" style="scale:200%; position: relative; right: 50%; filter:brightness(200%);"></i></a>
-    <a href="mailto:shanetandres@gmail.com"><i class="fa fa-envelope-o w3-hover-opacity" style="scale:200%; position: relative; right: 0%; filter:brightness(200%);"></i></a>
+    <a href="mailto:shanetandres@gmail.com"><i class="fa fa-envelope-o w3-hover-opacity" style="scale:200%; position: relative; right: 0; filter:brightness(200%);"></i></a>
     <a href="https://www.linkedin.com/in/shane-andres-35722b29b/" class="fa fa-linkedin w3-hover-opacity" style="scale:200%; position: relative; left: 50%; filter:brightness(200%);"></a>
   </div>
 </header>
@@ -77,27 +78,30 @@
   <div class="w3-row-padding">
     <div class="w3-col m7">
       <h1>Tube TV Oscilloscope</h1>
-      <p><i>Personal Project</i></t></p>
+      <p><i>Personal Project</i></p>
       <p>Driving the deflection coils of a Cathode Ray Tube (CRT) with an audio amplifier to use as a rudimentary oscilloscope in X-Y mode.
           One of my first electronics projects, I gained experience using lab equipment, working with high voltage electronics, and soldering.</p>
     </div>
-    <div class="w3-col m5", style="padding-left: 0%" >
-      <div class="w3-image w3-round-large" style="width:400px; height:300px; overflow:hidden"></dov><img class="w3-image w3-round-large" src="tube.jpg" alt="Buildings"></div>
+    <div class="w3-col m5" style="padding-left: 7.5%;" >
+        <video loop muted width="450" class="w3-image w3-round-large" id="crt_video">
+          <source src="waves%20loop%204_3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
     </div>
   </div>
 </div>
 
-<div class="w3-container w3-border-grey" style="padding:64px 16px" id="projects">
+<div class="w3-container w3-border-grey" style="padding:64px 16px">
   <div class="w3-row-padding">
-    <div class="w3-col m5", style="padding-left: 0%" >
-      <video loop muted width="400" class="w3-image w3-round-large" id="video">
+    <div class="w3-col m5" style="float:left; padding-right: 7.5%" >
+      <video loop muted width="450" class="w3-image w3-round-large" id="tetrix_video" style="float:right">
         <source src="tetrix%20demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
     <div class="w3-col m7">
       <h1>Tetrix</h1>
-      <p><i>Group Project</i></t></p>
+      <p><i>Group Project</i></p>
       <p>An online co-op version of the classic game, with a twist - where every time a new player joins,
       the playing board gets <b>wider</b>. Working on the backend of the project, I learned
       about working with databases and implementing authentication using Firebase.
@@ -109,9 +113,12 @@
 
 <script>
 
-
+  //On page load, auto plays project videos
   window.onload = function(){
-    var video = document.querySelector('video');
+    var video = document.getElementById('crt_video');
+    video.muted = true;
+    video.play()
+    video = document.getElementById('tetrix_video');
     video.muted = true;
     video.play()
   }

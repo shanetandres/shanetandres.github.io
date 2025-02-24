@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <title>Shane Andres</title>
-  <link rel="icon" type="image/x-icon" href="lightning.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="w3.css">
@@ -67,26 +66,57 @@
 
 
   <div class="w3-display-bottommiddle w3-text-grey w3-large" style="bottom: 25%; padding:24px 48px;">
-    <a href="https://github.com/shanetandres"><i class="fa fa-github w3-hover-opacity" style="scale:200%; position: relative; right: 50%; filter:brightness(200%);"></i></a>
-    <a href="mailto:shanetandres@gmail.com"><i class="fa fa-envelope-o w3-hover-opacity" style="scale:200%; position: relative; right: 0; filter:brightness(200%);"></i></a>
+    <a href="mailto:shanetandres@gmail.com"><i class="fa fa-envelope-o w3-hover-opacity" style="scale:200%; position: relative; right: 50%; filter:brightness(200%);"></i></a>
     <a href="https://www.linkedin.com/in/shane-andres-35722b29b/" class="fa fa-linkedin w3-hover-opacity" style="scale:200%; position: relative; left: 50%; filter:brightness(200%);"></a>
   </div>
 </header>
 
 <!-- Projects Section -->
-<div class="w3-container w3-light-grey" style="padding:64px 16px" id="projects">
+
+<div class="w3-container w3-border-grey" style="padding:64px 16px"  id="projects">
+  <div class="w3-row-padding">
+    <div class="w3-col m5" style="float:left; padding-right: 7.5%; padding-top: 2%" >
+      <img src="specgram_disturbed.PNG" width="450" class="w3-image w3-round-large" id="wagglenet_image" style="float:right">
+    </div>
+    <div class="w3-col m7">
+      <h1>Beehive Audio ML Classification</h1>
+      <p><i>Group Project</i></p>
+      <p>At my university I am one of the leaders of <a href="https://wagglenet.org">WaggleNet</a>, a student-run research group focused on using
+        sensors and analytics to monitor the health of beehives. In the group, I lead the audio team.
+        Over the past year, I have had the
+        opportunity to deploy a recording device I created at the university's bee lab. At the end of the Fall 2024 semester,
+        I was able to record 6 days worth of data from a hive. Using the data, I trained a classification model
+        to distinguish between disturbed and undisturbed hives. I used an FFT to extract features from audio clips,
+        and experimented with different deep net architectures. Using logistic regression, I was able to achieve 90% validation accuracy
+        on our dataset. Moving forward, I plan to explore more sophisticated methods for feature extraction that encode
+        time dependencies in the data. Future work will also make use of ML architecture that takes advantage of these dependencies,
+        such as CNNs and RNNs.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-light-grey" style="padding:64px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m7">
-      <h1>Tube TV Oscilloscope</h1>
-      <p><i>Personal Project</i></p>
-      <p>Driving the deflection coils of a Cathode Ray Tube (CRT) with an audio amplifier to use as a rudimentary oscilloscope in X-Y mode.
-          One of my first electronics projects, I gained experience using lab equipment, working with high voltage electronics, and soldering.</p>
+      <h1>FPGA Deep Net Implementation</h1>
+      <p><i>Independent School Project, 2024</i></p>
+      <p>During the Fall 2024 semester, I took a class on FPGA design at my university.
+         For the final project, I implemented the forward pass of an MLP deep net in hardware with SystemVerilog.
+         I trained a model on the MNIST digit detection dataset using PyTorch, and loaded the
+         weights onto the hardware. Using a serial connection, the FPGA was able to receive
+         and classify input images in live time. The model performed with 97% validation accuracy.
+      </p>
     </div>
     <div class="w3-col m5" style="padding-left: 7.5%;" >
-        <video loop muted width="450" class="w3-image w3-round-large" id="crt_video">
-          <source src="waves%20loop%204_3.mp4" type="video/mp4">
+
+      <div class="video-wrapper">
+        <video loop muted width="450" class="w3-image w3-round-large" id="fpga_video">
+          <source src="mnist_sample.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+      </div>
+
     </div>
   </div>
 </div>
@@ -94,33 +124,86 @@
 <div class="w3-container w3-border-grey" style="padding:64px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m5" style="float:left; padding-right: 7.5%" >
-      <video loop muted width="450" class="w3-image w3-round-large" id="tetrix_video" style="float:right">
-        <source src="tetrix%20demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="video-wrapper" style="float:right">
+        <video loop muted width="450" class="w3-image w3-round-large" id="tetrix_video" style="float:right">
+          <source src="tetrix%20demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
     <div class="w3-col m7">
       <h1>Tetrix</h1>
       <p><i>Group Project</i></p>
-      <p>An online co-op version of the classic game, with a twist - where every time a new player joins,
-      the playing board gets <b>wider</b>. Working on the backend of the project, I learned
-      about working with databases and implementing authentication using Firebase.
-      Along the way, I gained experience using JavaScript.
+      <p>An online co-op version of tetris where every time a new player joins,
+      the playing board gets wider. I worked on the database end of the project,
+      learning to use Firebase and OAuth. The project involved coding with
+      mainly HTML and JavaScript.
       </p>
     </div>
   </div>
 </div>
 
+<div class="w3-container w3-light-grey" style="padding:64px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m7">
+      <h1>Tube TV Oscilloscope</h1>
+      <p><i>Personal Project</i></p>
+      <p>Driving the deflection coils of a Cathode Ray Tube (CRT) with an audio amplifier to use as a rudimentary oscilloscope in X-Y mode.
+         This was my first experience with high voltage electronics.</p>
+    </div>
+    <div class="w3-col m5" style="padding-left: 7.5%;" >
+
+      <div class="video-wrapper">
+        <video loop muted width="450" class="w3-image w3-round-large" id="crt_video">
+          <source src="waves%20loop%204_3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <script>
 
-  //On page load, auto plays project videos
+  //Methods enabling video pausing
+  function renderVideoPlayButton(video, videoWrapper) {
+      video.pause()
+      formatVideoPlayButton(videoWrapper)
+      let videoPlayButton = document.getElementsByClassName('video-overlay-play-button')[document.getElementsByClassName('video-overlay-play-button').length - 1]
+      videoPlayButton.addEventListener('click', function(){ toggleVideo(video, videoPlayButton) });
+      video.addEventListener('click', function(){ toggleVideo(video, videoPlayButton) });
+  }
+  function formatVideoPlayButton(videoWrapper) {
+    videoWrapper.insertAdjacentHTML('beforeend', '\
+      <svg class="video-overlay-play-button" viewBox="0 0 300 300" alt="Play video">\
+      <circle cx="150" cy="150" r="90" fill="none" stroke-width="15" stroke="rgba(256, 256, 256, .7)"/>\
+      <polygon points="115, 105 115, 195 195, 150" fill="rgba(256, 256, 256, .7)"/>\
+      </svg>\
+    ')
+  }
+  function toggleVideo(video, videoPlayButton){
+    if(video.paused){
+      videoPlayButton.classList.add('is-hidden')
+      video.play()
+    }
+    else{
+      videoPlayButton.classList.remove('is-hidden')
+      video.pause()
+    }
+  }
+
+  //On page load, sets up pause buttons for project videos
   window.onload = function(){
-    var video = document.getElementById('crt_video');
-    video.muted = true;
-    video.play()
-    video = document.getElementById('tetrix_video');
-    video.muted = true;
-    video.play()
+
+    for(let i = 0; i < document.getElementsByTagName('video').length; i++)
+    {
+      let videoWrapper = document.getElementsByClassName('video-wrapper')[i];
+      let video = document.getElementsByTagName('video')[i];
+      renderVideoPlayButton(video, videoWrapper);
+    }
+
   }
 
   // Modal Image Gallery
@@ -147,6 +230,7 @@
   function w3_close() {
     mySidebar.style.display = "none";
   }
+
 </script>
 
 </body>

@@ -19,7 +19,8 @@
     .bgimg-1 {
       background-position: center;
       background-size: cover;
-      background-image: url("https://shanetandres.github.io/pcb%20blurred.png");
+      background-color: black;
+      /*background-image: url("https://shanetandres.github.io/pcb%20blurred.png");*!*/
       min-height: 100%;
     }
 
@@ -36,6 +37,7 @@
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#home" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1bvvHLDM0f3ji0MXqbqrKhju61sprBD58/view?usp=sharing" class="w3-bar-item w3-button">RESUME</a>
       <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-th"></i> PROJECTS</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -53,23 +55,42 @@
   <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
 </nav>
 
-<!-- Header with full-height image -->
+<!-- Header -->
 <header class="bgimg-1 w3-grayscale-min" id="home">
-  <div class="w3-text-white" style="position:absolute; bottom: 45%; width: 100%; text-align: center; font-weight: bold; ">
+  <!-- Name centered higher -->
+  <div style="position:absolute; bottom: 60%; width: 100%; text-align: center; font-weight: bolder" class="w3-text-white">
     <span class="w3-jumbo w3-hide-small">Shane Andres</span>
-    <span class="w3-display-center w3-xxxlarge w3-hide-large w3-hide-medium" style="bottom: 25%; width: 100%">Shane Andres</span>
+    <span class="w3-xxxlarge w3-hide-large w3-hide-medium">Shane Andres</span>
+  </div>
 
-    <div class="w3-display-center">
-      <p><a href="https://drive.google.com/file/d/16P-IOX1eULzsmKDn84oqP5-eD96P23Qu/view?usp=drive_link" class="w3-button w3-white w3-padding-large w3-xlarge w3-margin-top w3-hover-opacity" style="font-weight: lighter; filter:opacity(65%);">Resume</a></p>
+  <!-- Social links  -->
+  <div style="position:absolute; bottom: 58%; width: 100%; text-align: center;" class="w3-text-grey w3-large">
+    <a href="mailto:shanetandres@gmail.com"
+       class="fa fa-envelope-o w3-hover-opacity"
+       style="scale:200%; margin: 0 20px; filter:brightness(200%); text-decoration: none;"></a>
+    <a href="https://www.linkedin.com/in/shane-andres-35722b29b/"
+       class="fa fa-linkedin w3-hover-opacity"
+       style="scale:200%; margin: 0 20px; filter:brightness(200%); text-decoration: none;"></a>
+    <a href="https://github.com/shaneta2">
+      <i class="fa fa-github w3-hover-opacity"
+         style="scale:200%; margin: 0 20px; filter:brightness(200%); text-decoration: none;"></i>
+    </a>
+  </div>
+</header>
+
+  <!-- Paragraph lower -->
+  <div style="position:absolute; bottom: 40%; width: 100%; text-align: center;" class="w3-text-white">
+    <div style="max-width: 625px; margin:auto; font-weight: normal; line-height: 1.6; text-align: justify;">
+      <p>
+        Hi! I am a senior undergraduate studying electrical engineering at the University of Illinois Urbana-Champaign.
+        My research focuses on the applications of signal processing and machine learning in earth science.
+        I am especially interested in acoustics and remote sensing.
+      </p>
     </div>
   </div>
 
 
-  <div class="w3-display-bottommiddle w3-text-grey w3-large" style="bottom: 25%; padding:24px 48px;">
-    <a href="mailto:shanetandres@gmail.com"><i class="fa fa-envelope-o w3-hover-opacity" style="scale:200%; position: relative; right: 50%; filter:brightness(200%);"></i></a>
-    <a href="https://www.linkedin.com/in/shane-andres-35722b29b/" class="fa fa-linkedin w3-hover-opacity" style="scale:200%; position: relative; left: 50%; filter:brightness(200%);"></a>
-  </div>
-</header>
+
 
 <!-- Projects Section -->
 
@@ -81,16 +102,15 @@
     <div class="w3-col m7">
       <h1>Beehive Audio ML Classification</h1>
       <p><i>Group Project</i></p>
-      <p>At my university I am one of the leaders of <a href="https://wagglenet.org">WaggleNet</a>, a student-run research group focused on using
-        sensors and analytics to monitor the health of beehives. In the group, I lead the audio team.
-        Over the past year, I have had the
-        opportunity to deploy a recording device I created at the university's bee lab. At the end of the Fall 2024 semester,
-        I was able to record 6 days worth of data from a hive. Using the data, I trained a classification model
+      <p>At my university I am the leader of <a href="https://wagglenet.org">WaggleNet</a>, a student-run research group focused on using
+        sensors and analytics to monitor the health of beehives. Within the group, I lead the bioacoustics research project.
+        Over the past two years, I have had the
+        opportunity to deploy a recording device I created at the university's bee lab. Between the fall of 2024 and spring of 2025,
+        I was able to record 15 days worth of data from two hives. Using data from the fall, I trained a classification model
         to distinguish between disturbed and undisturbed hives. I used an FFT to extract features from audio clips,
         and experimented with different deep net architectures. Using logistic regression, I was able to achieve 90% validation accuracy
-        on our dataset. Moving forward, I plan to explore more sophisticated methods for feature extraction that encode
-        time dependencies in the data. Future work will also make use of ML architecture that takes advantage of these dependencies,
-        such as CNNs and RNNs.
+        on our dataset. Moving forward, I plan to explore more sophisticated methods for feature extraction and will be working
+        with Prof. Gene Robinson of the university's entomology department on exploratory data analysis.
       </p>
     </div>
   </div>
